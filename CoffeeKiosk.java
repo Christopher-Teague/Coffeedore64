@@ -23,6 +23,16 @@ public class CoffeeKiosk {
         }
     }
 
+    // public Item getByIndex(int index) {
+    //     for (Item item : menu) {
+    //         if (item.getIndex() == index ) {
+    //             return item;
+    //         }
+    //     }
+    //     return null;
+    // }
+
+
     public void newOrder() {
         
     	// Shows the user a message prompt and then sets their input to a variable, name
@@ -41,14 +51,19 @@ public class CoffeeKiosk {
         // newOrder.addItem();
         // Write a while loop to collect all user's order items
         while(!itemNumber.equals("q")) {
+            // int idx = Integer.parseInt(itemNumber);
+            // newOrder.addItem(this.getByIndex(idx));
             for (Item item : menu) {
-                // if itemNumber == item.getIndex()) {
+                //     // if itemNumber == item.getIndex()) {
                 if ((Integer.parseInt(itemNumber)) == item.getIndex()) {   
                     newOrder.addItem(item);
                 }        
+            }
+                        
+        System.out.println("Please enter a menu item index or q to quit:");
+        itemNumber = System.console().readLine();
             // Get the item object from the menu, and add the item to the order
             // Ask them to enter a new item index or q again, and take their input
-            }
         }
         newOrder.display();
     }
